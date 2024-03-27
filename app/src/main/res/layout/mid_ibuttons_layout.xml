@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageButton
+        android:id="@+id/imageBtnHeart"
+        android:src="@drawable/heartoutlined"
+        android:backgroundTint="#f1f1f1"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="30dp"
+        android:padding="15dp"
+        app:cardElevation="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dineParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/cart_transparent_bg"
+                android:backgroundTint="#80FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/dineInImageBtn"
+                    android:background="@drawable/mid_icons_bg"
+                    android:layout_width="wrap_content"
+                    android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/diningfortytwo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/dineBadge"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checksmall"
+                    app:layout_constraintBottom_toBottomOf="@id/dineInImageBtn"
+                    app:layout_constraintEnd_toEndOf="@id/dineInImageBtn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/takeAwayParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/cart_transparent_bg"
+                android:backgroundTint="#80FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/takeAwayImageBtn"
+                    android:background="@drawable/mid_icons_bg"
+                    android:layout_width="wrap_content"
+                    android:padding="6dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/takeawayfortytwo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/takeAwayBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checksmall"
+                    app:layout_constraintBottom_toBottomOf="@id/takeAwayImageBtn"
+                    app:layout_constraintEnd_toEndOf="@id/takeAwayImageBtn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/deliverParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/cart_transparent_bg"
+                android:backgroundTint="#80FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/deliverImageBtn"
+                    android:background="@drawable/mid_icons_bg"
+                    android:layout_width="wrap_content"
+                    android:padding="6dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/scooterfortytwo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/deliverBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/checksmall"
+                    app:layout_constraintBottom_toBottomOf="@id/deliverImageBtn"
+                    app:layout_constraintEnd_toEndOf="@id/deliverImageBtn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <ImageButton
+        android:id="@+id/imageBtnShare"
+        android:src="@drawable/share"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="7dp"
+        android:background="@drawable/oval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO" />
+</LinearLayout>
