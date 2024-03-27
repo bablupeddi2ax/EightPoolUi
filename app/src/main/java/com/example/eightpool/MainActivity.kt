@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var dineInBadge:ImageView
     private lateinit var deliveryBadge:ImageView
     private lateinit var likeImageBtn:ImageButton
+    private var sampleFoodItemTypes = listOf<FoodItemType>()
     private  var selectedItems:MutableLiveData<Int> = MutableLiveData(0)
 
 //            dineBadge
@@ -111,15 +112,20 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-        mParentAdapter.innerAdapter?.setOnItemClickListener(object :ChildAdapter.onItemClickedListeneM{
-            override fun onItemCLick(item: Item) {
-                super.onItemCLick(item)
-                Log.i("selected items",selectedItems.value.toString())
+
+        mParentAdapter.parentCLick = object :ChildAdapter.OnItemClickedListenerC{
+
+            override fun onItemClicked(item: Item) {
+                Log.i("selected items", selectedItems.value.toString())
                 selectedItems.value = selectedItems.value?.plus(1)
-
             }
-
-            })
+        }
+//        mParentAdapter.setOnItemClickedListener(object : ChildAdapter.OnItemClickedListenerC {
+//            override fun onItemClicked(item: Item) {
+//                Log.i("selected items", selectedItems.value.toString())
+//                selectedItems.value = selectedItems.value?.plus(1)
+//            }
+//        })
     }
 
     private fun initViews() {
@@ -140,7 +146,7 @@ class MainActivity : AppCompatActivity() {
 
         mFoodItemTypeRecyclerView.layoutManager = LinearLayoutManager(
             this,)
-        val sampleFoodItems = listOf(
+        val  sampleFoodItems = listOf(
             Item(
                 "fod1",
                 "Eight Pool Salad",
@@ -165,14 +171,13 @@ class MainActivity : AppCompatActivity() {
             // Add more sample items as needed
         )
 
-        val sampleFoodItemTypes = listOf(
+        sampleFoodItemTypes = listOf(
             FoodItemType("Salads", sampleFoodItems),
             FoodItemType("Pizzas", sampleFoodItems),
             FoodItemType("Seafood", sampleFoodItems)
-            // Add more food item types with corresponding sample items
         )
 
-        mParentAdapter  = ParentAdapter(this,sampleFoodItemTypes)
+        mParentAdapter = ParentAdapter(this, sampleFoodItemTypes)
         mFoodItemTypeRecyclerView.adapter = mParentAdapter
 
 
